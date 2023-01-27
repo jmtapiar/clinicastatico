@@ -2,6 +2,7 @@
 
 const sass = require("gulp-sass")(require("sass"));
 const gulp = require("gulp");
+const connect = require('gulp-connect');
 const sourcemaps = require("gulp-sourcemaps");
 const fileinclude = require("gulp-file-include");
 const autoprefixer = require("gulp-autoprefixer");
@@ -27,12 +28,13 @@ var path = {
 };
 
 // iniciar
-gulp.task('serveprod', connect.server({
+gulp.task('serveprod', function() {
+  connect.server({
     root: [path.build.dirBuild],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
-  }));
-
+  });
+});
 
 // HTML
 gulp.task("html:build", function () {
