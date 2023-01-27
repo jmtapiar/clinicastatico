@@ -29,7 +29,7 @@ var path = {
 // iniciar
 gulp.task('serveprod', function() {
   bs.server({
-    root: [your_project_path],
+    root: [path.build.dirBuild],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
