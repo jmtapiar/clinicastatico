@@ -30,7 +30,7 @@ var path = {
 // iniciar
 gulp.task('serveprod', function() {
   connect.server({
-    root: [path.build.dirDev],
+    root: path.build.dirDev,
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
@@ -178,6 +178,7 @@ gulp.task(
 gulp.task(
   "build",
   gulp.series(
+    "serveprod",
     "html:build",
     "js:build",
     "scss:build",
