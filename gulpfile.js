@@ -27,15 +27,11 @@ var path = {
 };
 
 // iniciar
-
 gulp.task('serveprod', function() {
-  
-  bs.create({
-    server: {
-      baseDir: path.build.dirBuild,
-    },
-   port: process.env.PORT || 5000,
-   livereload: false 
+  bs.server({
+    root: [your_project_path],
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
   });
 });
 
