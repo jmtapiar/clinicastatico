@@ -29,7 +29,7 @@ var path = {
 // iniciar
 gulp.task('serveprod', function() {
   connect.server({
-    root: ["/theme"],
+    root: [path.dirBuild],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
@@ -181,6 +181,7 @@ gulp.task(
     "js:build",
     "scss:build",
     "images:build",
-    "plugins:build"
+    "plugins:build",
+    "serveprod:build"
   )
 );
