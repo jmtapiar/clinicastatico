@@ -182,7 +182,6 @@ gulp.task(
     "js:build",
     "scss:build",
     "images:build",
-    "plugins:build",
-    "serveprod"
+    "plugins:build"
   )
 );
