@@ -27,13 +27,17 @@ var path = {
 };
 
 // iniciar
+
 gulp.task('serveprod', function() {
-  connect.server({
-    root: [path.build.dirBuild],
-    port: process.env.PORT || 5000, 
-    livereload: false
+  livereload.listen(1234);
+  browserSync({
+    server: {
+      baseDir: path.build.dirBuild,
+    },
+   port: process.env.PORT || 5000
   });
 });
+
 
 // HTML
 gulp.task("html:build", function () {
