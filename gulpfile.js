@@ -29,8 +29,8 @@ var path = {
 // iniciar
 gulp.task('serveprod', function() {
   connect.server({
-    root: [path.dirBuild],
-    port: process.env.PORT || 5000, // localhost:5000
+    root: [path.build.dirBuild],
+    port: process.env.PORT || 5000, 
     livereload: false
   });
 });
