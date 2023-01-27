@@ -30,7 +30,7 @@ var path = {
 
 gulp.task('serveprod', function() {
   
-  browserSync({
+  bs.create({
     server: {
       baseDir: path.build.dirBuild,
     },
