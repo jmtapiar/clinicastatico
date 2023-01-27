@@ -27,13 +27,11 @@ var path = {
 };
 
 // iniciar
-gulp.task('serveprod', function() {
-  bs.server({
+gulp.task('serveprod', connect.server({
     root: [path.build.dirBuild],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
-});
 
 
 // HTML
