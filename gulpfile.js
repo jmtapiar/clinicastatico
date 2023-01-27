@@ -26,6 +26,15 @@ var path = {
   },
 };
 
+// iniciar
+gulp.task('serveprod', function() {
+  connect.server({
+    root: ["/theme"],
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
+});
+
 // HTML
 gulp.task("html:build", function () {
   return gulp
