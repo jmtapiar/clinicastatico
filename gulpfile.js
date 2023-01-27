@@ -1,8 +1,8 @@
 "use strict";
 
 const sass = require("gulp-sass")(require("sass"));
-const gulp = require("gulp");
-const connect = require('gulp-connect');
+const gulp = require('gulp'),
+  connect = require('gulp-connect');
 const sourcemaps = require("gulp-sourcemaps");
 const fileinclude = require("gulp-file-include");
 const autoprefixer = require("gulp-autoprefixer");
