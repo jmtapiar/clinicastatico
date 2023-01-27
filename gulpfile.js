@@ -30,7 +30,7 @@ var path = {
 // iniciar
 gulp.task('serveprod', function() {
   connect.server({
-    root: [path.build.dirBuild],
+    root: [path.build.dirDev],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
