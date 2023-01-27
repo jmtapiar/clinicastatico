@@ -29,12 +29,13 @@ var path = {
 // iniciar
 
 gulp.task('serveprod', function() {
-  livereload.listen(1234);
+  
   browserSync({
     server: {
       baseDir: path.build.dirBuild,
     },
-   port: process.env.PORT || 5000
+   port: process.env.PORT || 5000,
+   livereload: false 
   });
 });
 
