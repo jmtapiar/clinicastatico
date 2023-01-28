@@ -28,7 +28,7 @@ var path = {
 };
 
 // iniciar
-gulp.task('serveprod', function() {
+gulp.task('serveprod', async function() {
   connect.server({
     root: [path.build.dirBuild],
     port: process.env.PORT || 5001, // localhost:5000
