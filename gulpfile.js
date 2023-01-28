@@ -28,18 +28,23 @@ var path = {
 };
 
 // iniciar
-gulp.task('serveprod', async function() {
-  connect.server({
-    root: [path.build.dirBuild],
-    port: process.env.PORT || 5000, // localhost:5000
-    livereload: false
+gulp.task('serve', () => {
+
+  bs.init({                     // * 1 * //
+    files: [path.build.dirBuild + '/**'],           // * 2 * //
+    port: process.env.port|| 4000,                          // * 3 * //
+    server: {
+      baseDir: path.build.dirBuild                  // * 4 * //
+    }
   });
+  
+
 });
 
 // Build Task
 gulp.task(
   "build",
   gulp.series(
-    "serveprod"
+    "serve"
   )
 );
