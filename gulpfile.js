@@ -29,11 +29,10 @@ var path = {
 
 // iniciar
 gulp.task('serveprod', function() {
-  connect.server({
-    root: path.build.dirDev,
-    port: process.env.PORT || 5000,
-    livereload: false
-  });
+  browserSync.init({
+    server: path.build.dirBuild,
+    port: process.ENV.port||3050 // THIS OPENS ON 3001 BECAUSE NODE HAS THAT PORT BUSY
+});
 });
 
 // HTML
@@ -178,11 +177,10 @@ gulp.task(
 gulp.task(
   "build",
   gulp.series(
-    "serveprod",
     "html:build",
     "js:build",
     "scss:build",
     "images:build",
-    "plugins:build"
+    "plugins:build",
   )
 );
