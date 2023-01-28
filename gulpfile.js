@@ -29,12 +29,12 @@ var path = {
 
 // iniciar
 gulp.task('serveprod', function() {
-  browserSync.init({
-    server: path.build.dirBuild,
-    port: process.ENV.port||3050
+  connect.server({
+    root: [path.build.dirBuild],
+    port: process.env.PORT || 5001, // localhost:5000
+    livereload: false
+  });
 });
-});
-
 // HTML
 gulp.task("html:build", function () {
   return gulp
