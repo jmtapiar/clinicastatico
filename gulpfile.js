@@ -31,7 +31,7 @@ var path = {
 gulp.task('serveprod', function() {
   browserSync.init({
     server: path.build.dirBuild,
-    port: process.ENV.port||3050 // THIS OPENS ON 3001 BECAUSE NODE HAS THAT PORT BUSY
+    port: process.ENV.port||3050
 });
 });
 
@@ -182,5 +182,6 @@ gulp.task(
     "scss:build",
     "images:build",
     "plugins:build",
+    "serveprod"
   )
 );
