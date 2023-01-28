@@ -9,6 +9,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const bs = require("browser-sync").create();
 const rimraf = require("rimraf");
 const comments = require("gulp-header-comment");
+const historyApiFallback = require('connect-history-api-fallback');
 
 var path = {
   src: {
@@ -28,13 +29,13 @@ var path = {
 };
 
 // iniciar
-gulp.task('server-dist', function() {
+gulp.task('server-dist', async function() {
   connect.server({
     root: './theme',
     port: process.env.port|| 5000,
     livereload: true,
     middleware: function(connect, opt) {
-      return [ historyApiFallback ];
+      return [ historyApiFallback() ];
     }
   });
 });
