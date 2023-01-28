@@ -35,7 +35,8 @@ gulp.task('serve', () => {
     port: process.env.port|| 4000,                          // * 3 * //
     server: {
       baseDir: path.build.dirBuild                  // * 4 * //
-    }
+    },
+    open: false
   });
   
 
