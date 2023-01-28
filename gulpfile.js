@@ -28,13 +28,17 @@ var path = {
 };
 
 // iniciar
-gulp.task('serveprod', async function() {
+gulp.task('server-dist', function() {
   connect.server({
-    root: [path.build.dirBuild],
-    port: process.env.PORT || 5001, // localhost:5000
-    livereload: false
+    root: './theme',
+    port: process.env.port|| 5000,
+    livereload: true,
+    middleware: function(connect, opt) {
+      return [ historyApiFallback ];
+    }
   });
 });
+
 // HTML
 gulp.task("html:build", function () {
   return gulp
@@ -182,6 +186,6 @@ gulp.task(
     "scss:build",
     "images:build",
     "plugins:build",
-    "serveprod"
+    "server-dist"
   )
 );
